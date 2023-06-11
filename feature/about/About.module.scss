@@ -1,0 +1,24 @@
+.about {
+  
+  .section1,.section2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  
+    height: 70vh;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 30px;
+      background: var(--primary);
+    }
+  
+    .image {
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
+}

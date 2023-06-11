@@ -1,0 +1,29 @@
+.menuMain {
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 5px;
+
+    li {
+      height: 150px;
+      display: inline-flex;
+      align-items: center;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+
+        font-size: 20px;
+
+        height: 100%;
+        padding: 0 30px;
+
+        color: var(--primary);
+
+        &:hover {
+          background: var(--secondary);
+        }
+      }
+    }
+  }
+}

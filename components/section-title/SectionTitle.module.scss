@@ -1,23 +1,24 @@
 .sectionTitle {
+  margin: 10px 0;
   .title {
-    font-size: 60px;
+    font-size: 40px;
     color: #000000;
-    line-height: 75px;
     text-align: left;
-    font-family: gotham-metropolis-bl;
-    font-weight: 400;
-    font-style: normal;
     margin: 0;
+    padding: 0;
+    margin-bottom: -16px;
+    text-transform: uppercase;
   }
 
   .subtitle {
-    font-size: 55px;
+    font-size: 60px;
     color: var(--white);
-    line-height: 75px;
     text-align: left;
-    font-family: gm-metro-extra-light;
-    font-weight: 400;
-    font-style: normal;
     margin: 0;
+    margin-left: 15px;
+
+    &.one {
+     color: var(--secondary) !important;
+    }
   }
 }

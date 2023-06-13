@@ -10,7 +10,7 @@ import { MdExpandMore } from "react-icons/md";
 import styles from "./Accordion.module.scss";
 
 const Accordion = () => {
-  const [expanded, setExpanded] = useState<string | false>(false);
+  const [expanded, setExpanded] = useState<string | false>("panel1");
 
   const handleChange =
     (panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {
@@ -23,16 +23,15 @@ const Accordion = () => {
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
       >
-        <AccordionSummary expandIcon={<MdExpandMore />}>
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+        <AccordionSummary expandIcon={<MdExpandMore size={25} />}>
+          <Typography
+            sx={{ width: "33%", flexShrink: 0, fontFamily: "ElaineKinandhita" }}
+          >
             General settings
-          </Typography>
-          <Typography sx={{ color: "text.secondary" }}>
-            I am an accordion
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ fontFamily: "Montserrat", fontSize: "13px" }}>
             Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
             Aliquam eget maximus est, id dignissim quam.
           </Typography>
@@ -42,16 +41,15 @@ const Accordion = () => {
         expanded={expanded === "panel2"}
         onChange={handleChange("panel2")}
       >
-        <AccordionSummary expandIcon={<MdExpandMore />}>
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+        <AccordionSummary expandIcon={<MdExpandMore size={25} />}>
+          <Typography
+            sx={{ width: "33%", flexShrink: 0, fontFamily: "ElaineKinandhita" }}
+          >
             General settings
-          </Typography>
-          <Typography sx={{ color: "text.secondary" }}>
-            I am an accordion
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ fontFamily: "Montserrat", fontSize: "13px" }}>
             Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
             Aliquam eget maximus est, id dignissim quam.
           </Typography>
@@ -61,16 +59,15 @@ const Accordion = () => {
         expanded={expanded === "panel3"}
         onChange={handleChange("panel3")}
       >
-        <AccordionSummary expandIcon={<MdExpandMore />}>
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+        <AccordionSummary expandIcon={<MdExpandMore size={25} />}>
+          <Typography
+            sx={{ width: "33%", flexShrink: 0, fontFamily: "ElaineKinandhita" }}
+          >
             General settings
-          </Typography>
-          <Typography sx={{ color: "text.secondary" }}>
-            I am an accordion
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ fontFamily: "Montserrat", fontSize: "13px" }}>
             Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
             Aliquam eget maximus est, id dignissim quam.
           </Typography>

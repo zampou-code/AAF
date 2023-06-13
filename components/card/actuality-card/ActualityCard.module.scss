@@ -1,0 +1,43 @@
+.actualityCard {
+  border-radius: 0;
+  max-width: 400px;
+
+  .imageContent {
+    position: relative;
+    height: 300px;
+
+    .image {
+      width: auto;
+      height: 100%;
+    }
+
+    .time {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 5px;
+
+      span {
+        margin: 0 2px;
+      }
+    }
+  }
+
+  .content {
+    h2 {
+      margin-bottom: 10px;
+      text-transform: capitalize;
+      color: var(--primary);
+    }
+
+    p {
+      
+      font-family: "Montserrat", sans-serif;
+      font-weight: 300;
+      text-align: justify;
+      line-height: 130%;
+    }
+  }
+}

@@ -1,29 +1,44 @@
-import { Pagination, Autoplay } from "swiper";
+import { RefObject } from "react";
+import classNames from "classnames";
 import Image from "@/components/image";
-import styles from "./HeroSlide.module.scss";
+import Button from "@/components/button";
+import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { BiChevronLeft, BiChevronRight, BiArrowToBottom } from "react-icons/bi";
 
-import hero1 from "../../../assets/images/sliders/hero/hero1.jpg";
+import hero1 from "@/assets/images/sliders/hero/hero1.jpg";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import styles from "./HeroSlide.module.scss";
+import { useRef } from "react";
 
 const HeroSlide = () => {
+  const swiperRef: RefObject<any> = useRef(null);
+
+  const handlePrevClick = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  const handleNextClick = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
   return (
-    <section className={styles.heroSilde}>
+    <section className={classNames("hero-slide", styles.heroSilde)}>
       <Swiper
         loop={true}
-        direction="vertical"
+        ref={swiperRef}
         autoplay={{ delay: 3000 }}
         pagination={{ clickable: true }}
-        modules={[Pagination, Autoplay]}
+        modules={[ Autoplay]}
         className={styles.sliderContainer}
       >
         {Array.from({ length: 10 }, (_, index) => index + 1).map((i) => (
           <SwiperSlide key={i} className={styles.slider}>
-            <div className={styles.slideContent}>
-              <h1>Hooooooooooo</h1>
-            </div>
             <Image
               src={hero1}
               alt="fr"
@@ -31,14 +46,26 @@ const HeroSlide = () => {
                 width: 2700,
                 height: 1038,
               }}
-              customSize={{
-                width: "100%",
-                height: "auto",
-              }}
               className={styles.slideImage}
             />
           </SwiperSlide>
         ))}
+
+        <div className={styles.arrows}>
+          <Button onClick={handlePrevClick} className={styles.btn}>
+            <BiChevronLeft size={30} />
+          </Button>
+          <Button onClick={handleNextClick} className={styles.btn}>
+            <BiChevronRight size={30} />
+          </Button>
+        </div>
+
+        <div className={styles.start}>
+          <Button className={styles.btn} href="#about">
+            <p style={{ display: "block" }}>Commencez la visite</p>
+            <BiArrowToBottom size={30} style={{ display: "block" }} />
+          </Button>
+        </div>
       </Swiper>
     </section>
   );

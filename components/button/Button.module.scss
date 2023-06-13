@@ -1,7 +1,14 @@
 .button {
   font-size: 20px;
 
+  text-transform: lowercase;
   padding: 10px 20px;
   color: var(--primary);
   background: var(--secondary);
+
+  border-radius: 0;
+
+  &:hover {
+    background: var(--secondary);
+  }
 }

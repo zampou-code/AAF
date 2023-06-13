@@ -1,6 +1,6 @@
 import { MouseEventHandler, ReactNode } from "react";
 import classNames from "classnames";
-import { ButtonBase } from "@mui/material";
+import { Button as MuiButton, ButtonBase } from "@mui/material";
 
 import styles from "./Button.module.scss";
 
@@ -13,7 +13,8 @@ interface ButtonProps {
 
 const Button = ({ children, className, onClick, ...props }: ButtonProps) => {
   return (
-    <ButtonBase
+    <MuiButton
+      sx={{ fontFamily: "ElaineKinandhita" }}
       className={classNames(styles.button, {
         [className]: Boolean(className),
       })}
@@ -21,7 +22,7 @@ const Button = ({ children, className, onClick, ...props }: ButtonProps) => {
       onClick={onClick}
     >
       {children}
-    </ButtonBase>
+    </MuiButton>
   );
 };
 

@@ -8,8 +8,6 @@ interface SectionTitleProps {
 }
 
 const SectionTitle = ({ title, subtitle, className }: SectionTitleProps) => {
-  console.log(className);
-  
   return (
     <div className={styles.sectionTitle}>
       {title && (

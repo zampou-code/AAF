@@ -17,6 +17,10 @@
     margin: 0;
     margin-left: 15px;
 
+    &.two {
+     color: var(--primary) !important;
+    }
+
     &.one {
      color: var(--secondary) !important;
     }

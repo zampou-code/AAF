@@ -1,8 +1,7 @@
 .heroSilde {
   .sliderContainer {
-    height: 80vh;
+    height: 86vh;
     overflow: hidden;
-
 
     .slider {
       position: relative;
@@ -17,34 +16,19 @@
     .arrows {
       position: absolute;
       z-index: 10;
-      top: 80.7%;
+      top: 50%;
       right: 0;
+      transform: translateY(-50%);
 
       width: 100%;
 
       display: flex;
       justify-content: space-between;
-      padding: 0 10px;
+      padding: 0 30px;
 
       .btn {
         padding: 5px !important;
       }
-    }
-
-    .start {
-      position: absolute;
-      z-index: 10;
-
-      top: 80%;
-      left: 50%;
-      transform: translateX(-50%);
-
-      .btn {
-        display: flex;
-        gap: 10px;
-        width: 270px;
-      }
-
     }
   }
 }

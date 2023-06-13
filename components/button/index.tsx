@@ -13,7 +13,6 @@ interface ButtonProps {
 
 const Button = ({ children, className, onClick, ...props }: ButtonProps) => {
   return (
-    // <span>{children}</span>
     <MuiButton
       sx={{ fontFamily: "ElaineKinandhita" }}
       className={classNames(styles.button, {

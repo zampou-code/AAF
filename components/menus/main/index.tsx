@@ -28,11 +28,6 @@ const MenuMain = () => {
             Actualité
           </Link>
         </li>
-        <li>
-          <Link to="actu" smooth={true} duration={duration}>
-            Faq
-          </Link>
-        </li>
       </ul>
     </nav>
   );

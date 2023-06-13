@@ -8,13 +8,21 @@ interface SectionTitleProps {
 }
 
 const SectionTitle = ({ title, subtitle, className }: SectionTitleProps) => {
+  console.log(className);
+  
   return (
     <div className={styles.sectionTitle}>
-      {title && <h3 className={styles.title}>{title}</h3>}
-      {subtitle && (
-        <h1
-          className={classNames(styles.subtitle, styles[className])}
+      {title && (
+        <h3
+          className={classNames(styles.title, {
+            [className]: Boolean(className),
+          })}
         >
+          {title}
+        </h3>
+      )}
+      {subtitle && (
+        <h1 className={classNames(styles.subtitle, styles[className])}>
           {subtitle}
         </h1>
       )}

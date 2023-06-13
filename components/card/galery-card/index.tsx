@@ -1,15 +1,18 @@
 import classNames from "classnames";
 import Image from "@/components/image";
-
-import aal from "@/assets/images/aal.jpg";
+import { StaticImageData } from "next/image";
 
 import styles from "./GaleryCard.module.scss";
 
-const GaleryCard = () => {
+interface GaleryCardProps {
+  image: StaticImageData | string;
+}
+
+const GaleryCard = ({ image }: GaleryCardProps) => {
   return (
     <div className={styles.galeryCard}>
       <Image
-        src={aal}
+        src={image}
         alt="header logo"
         imageSize={{
           width: 1854,

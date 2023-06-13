@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { BiChevronLeft, BiChevronRight, BiArrowToBottom } from "react-icons/bi";
 
 import hero1 from "@/assets/images/sliders/hero/hero1.jpg";
+import as4 from "@/assets/images/as/as4.jpg";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -27,6 +28,7 @@ const HeroSlide = () => {
       swiperRef.current.swiper.slideNext();
     }
   };
+
   return (
     <section className={classNames("hero-slide", styles.heroSilde)}>
       <Swiper
@@ -34,22 +36,31 @@ const HeroSlide = () => {
         ref={swiperRef}
         autoplay={{ delay: 3000 }}
         pagination={{ clickable: true }}
-        modules={[ Autoplay]}
+        modules={[Autoplay]}
         className={styles.sliderContainer}
       >
-        {Array.from({ length: 10 }, (_, index) => index + 1).map((i) => (
-          <SwiperSlide key={i} className={styles.slider}>
-            <Image
-              src={hero1}
-              alt="fr"
-              imageSize={{
-                width: 2700,
-                height: 1038,
-              }}
-              className={styles.slideImage}
-            />
-          </SwiperSlide>
-        ))}
+        <SwiperSlide className={styles.slider}>
+          <Image
+            src={hero1}
+            alt="fr"
+            imageSize={{
+              width: 2700,
+              height: 1038,
+            }}
+            className={styles.slideImage}
+          />
+        </SwiperSlide>
+        <SwiperSlide className={styles.slider}>
+          <Image
+            src={as4}
+            alt="fr"
+            imageSize={{
+              width: 2700,
+              height: 1038,
+            }}
+            className={styles.slideImage}
+          />
+        </SwiperSlide>
 
         <div className={styles.arrows}>
           <Button onClick={handlePrevClick} className={styles.btn}>
@@ -57,13 +68,6 @@ const HeroSlide = () => {
           </Button>
           <Button onClick={handleNextClick} className={styles.btn}>
             <BiChevronRight size={30} />
-          </Button>
-        </div>
-
-        <div className={styles.start}>
-          <Button className={styles.btn} href="#about">
-            <p style={{ display: "block" }}>Commencez la visite</p>
-            <BiArrowToBottom size={30} style={{ display: "block" }} />
           </Button>
         </div>
       </Swiper>

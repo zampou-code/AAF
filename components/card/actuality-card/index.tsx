@@ -1,17 +1,20 @@
 import Image from "@/components/image";
+import { StaticImageData } from "next/image";
 import { Card, CardActionArea, CardContent } from "@mui/material";
-
-import aal from "@/assets/images/aal.jpg";
 
 import styles from "./ActualityCard.module.scss";
 
-const ActualityCard = () => {
+interface ActualityCardProps {
+  image: StaticImageData | string;
+}
+
+const ActualityCard = ({ image }: ActualityCardProps) => {
   return (
     <Card className={styles.actualityCard}>
       <CardActionArea>
         <div className={styles.imageContent}>
           <Image
-            src={aal}
+            src={image}
             alt="header logo"
             imageSize={{
               width: 1854,

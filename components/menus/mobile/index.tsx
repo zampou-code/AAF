@@ -1,11 +1,12 @@
-import Link from "next/link";
 import { useState } from "react";
+import { Link } from "react-scroll";
 import Button from "@/components/button";
 import { MdSubject, MdClose } from "react-icons/md";
 
 import styles from "./MenuMobile.module.scss";
 
 const MenuMobile = () => {
+  const duration = 100;
   const [show, setShow] = useState<boolean>(false);
   const handleShow = () => setShow((old: boolean) => !old);
 
@@ -18,28 +19,23 @@ const MenuMobile = () => {
         <nav className={styles.menuMobile}>
           <ul>
             <li>
-              <Link href="#" passHref>
+              <Link to="section1" smooth={true} duration={duration}>
                 Accueil
               </Link>
             </li>
             <li>
-              <Link href="#about" passHref>
+              <Link to="about" smooth={true} duration={duration}>
                 A propos
               </Link>
             </li>
             <li>
-              <Link href="#media" passHref>
+              <Link to="media" smooth={true} duration={duration}>
                 Mediathèque
               </Link>
             </li>
             <li>
-              <Link href="#actu" passHref>
+              <Link to="actu" smooth={true} duration={duration}>
                 Actualité
-              </Link>
-            </li>
-            <li>
-              <Link href="#faq" passHref>
-                Faq
               </Link>
             </li>
           </ul>

@@ -32,8 +32,6 @@ const About = () => {
               dolorum dicta voluptatum?
             </p>
           </div>
-
-          <Button>Lire la suite</Button>
         </div>
         <Image
           src={aal}
